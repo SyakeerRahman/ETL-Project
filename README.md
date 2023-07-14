@@ -30,5 +30,6 @@ Will update if any new platforms are used.
 ## List of Project
 
 1. Connect to MySQL and export data from MySQL to excel | Docker | MySQL | Python | Pandas | Excel |
-<img width="595" alt="image" src="https://github.com/SyakeerRahman/ETL-Project/assets/105381652/34f3609a-a7b3-46fc-80d8-56e36c7d3407">
+<img width="589" alt="image" src="https://github.com/SyakeerRahman/ETL-Project/assets/105381652/f92c6358-af38-4fc0-90ed-52cae1c7a2ad">
+
 
