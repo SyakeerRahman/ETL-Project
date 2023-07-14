@@ -26,3 +26,9 @@ Will update if any new platforms are used.
 9. [PostgreSQL](https://www.postgresql.org/)
 10. [Python](https://www.python.org/)
 11. [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+
+## List of Project
+
+1. Connect to MySQL and export data from MySQL to excel | Docker | MySQL | Python | Pandas | Excel |
+<img width="595" alt="image" src="https://github.com/SyakeerRahman/ETL-Project/assets/105381652/34f3609a-a7b3-46fc-80d8-56e36c7d3407">
+
