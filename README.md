@@ -32,4 +32,8 @@ Will update if any new platforms are used.
 1. Connect to MySQL and export data from MySQL to excel | Docker | MySQL | Python | Pandas | Excel |
 <img width="589" alt="image" src="https://github.com/SyakeerRahman/ETL-Project/assets/105381652/f92c6358-af38-4fc0-90ed-52cae1c7a2ad">
 
+2. Excel to Postgres - Load Data using Python | Excel | Panda | OS | PostgreSQL
+   <img width="517" alt="image" src="https://github.com/SyakeerRahman/ETL-Project/assets/105381652/3e9695c5-3dc8-473e-9154-9dcbed05144c">
+
+
 
