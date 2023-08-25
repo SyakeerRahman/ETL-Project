@@ -5,3 +5,9 @@
 ### 2. Installing MRJob, Python, Nano in Hadoop cluster to run MapReduce job! | Hadoop Tutorial
 
 <img width="904" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/50b6f9bc-7091-48ff-b57a-5688ea53cfdb">
+
+### 3. Running our first MapReduce Job! | Analyzing Movie Ratings data to get the most popular ratings
+
+<img width="918" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/bd6ec49c-94a5-4b7d-833a-dee7e0dd16d1">
+
+
