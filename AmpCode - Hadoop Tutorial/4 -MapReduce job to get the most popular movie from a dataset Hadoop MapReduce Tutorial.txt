@@ -1,0 +1,9 @@
+MapReduce Exercise to analyze movie ratings data to get the most popular movie from movies data set. Mapreduce script written in Python and what are the different stages and their function such as Mapper function and Reducer function.
+
+1. Getting the required files:  https://raw.githubusercontent.com/ashaypatil11/hadoop/main/TopMovies.py
+
+2. Running locally:
+python TopMovies.py ratings.data
+
+3. Running on Hadoop cluster:
+python TopMovies.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar ratings.data
