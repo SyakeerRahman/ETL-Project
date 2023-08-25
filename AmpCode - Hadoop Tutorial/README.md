@@ -10,4 +10,7 @@
 
 <img width="918" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/bd6ec49c-94a5-4b7d-833a-dee7e0dd16d1">
 
+### 4. MapReduce job to get the most popular movie from a dataset | Hadoop MapReduce Tutorial
+
+<img width="944" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/27d28791-4e7a-41a9-b5e0-a507dddc40d4">
 
