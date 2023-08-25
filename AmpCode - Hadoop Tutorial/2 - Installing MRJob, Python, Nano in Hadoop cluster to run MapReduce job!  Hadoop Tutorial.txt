@@ -1,0 +1,22 @@
+
+1. go in Putty maria_dev@localhost port:2222
+
+2. su root, password hadoop and it ask to change password
+
+3. change your own password and login again to su root, it will show # at the end of maria_dee]
+
+4. yum-config-manager --save --setopt=HDP-SOLR-2.6-100.skip_if_unavailable=true
+
+5. yum install yum install https://repo.ius.io/ius-release-el7.rpm https://dl.fedoraproject.org/pub/epel/epel-rpm-release-latestl7.noarch.rpm
+
+6.yum install python-pip
+
+7.pip install pathlib
+
+8.pip install mrjob==0.7.4
+
+9.pip install PyYAML==5.4.1
+
+10.yum install nano
+
+
