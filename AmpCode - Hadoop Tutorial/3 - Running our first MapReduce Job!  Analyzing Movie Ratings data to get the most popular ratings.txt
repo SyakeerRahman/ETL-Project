@@ -1,0 +1,11 @@
+Running MapReduce Job by analyzing movie ratings data to get the most popular ratings from our data set. This lecture will cover getting all the required scripts and data files, then we will learn our mapreduce script written in Python and what are the different stages and their function such as Mapper function and Reducer function.
+
+1. Getting the required files:
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/ratings.data
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/MovieRatings.py
+
+2. Running locally:
+python MovieRatings.py ratings.data
+
+3. Running on Hadoop cluster:
+python MovieRatings.py –r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar ratings.data
