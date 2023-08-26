@@ -1,0 +1,24 @@
+Apache Hive is open source data warehouse syyem to run SQL on top of datasets stored in HDFS. Much better since using HiveQL same as other SQL not like MapReduce scripts and automatically converts sql query into series of jobs for execution on a Hadoop cluster.
+
+Run Hive Query in Ambari for easier UI/UX.
+
+1. click hive view
+
+2. click on file upload and upload the needed file and rename all the column
+
+3. run query to find top movies
+
+select r.movie_id, m.movie_id, count(r.rating) as total_rating
+from ratings r JOIN movies m on r.movie_id = m.movie_id
+group by r.movie_id, m.movie_name
+order by total_rating DESC;
+
+Run Hive Query in Shell 
+
+1. wget ratings.data 
+
+2. in hive, do manual query to create databases, create table and load ratings.data into the table
+
+3. drop database '' cascade - to drop the database
+
+4. wget ratings_hive.sql and run the sql in hdfs
