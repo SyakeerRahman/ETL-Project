@@ -14,3 +14,8 @@
 
 <img width="944" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/27d28791-4e7a-41a9-b5e0-a507dddc40d4">
 
+### 5. Running Hive Queries through Command Line (Hive Shell) | Hadoop Tutorial
+
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/7c9b94f9-024c-4f92-9c65-c63b763ded1f)
+
+
