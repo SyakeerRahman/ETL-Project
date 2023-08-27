@@ -1,0 +1,30 @@
+1. Running Spark Application on Hadoop Cluster
+
+Running Spark application on Hadoop clusterwhich is written in Python (PySpark Script), we created a DataFrame on a CSV file and applied some transformations on it. Then we have written those output DataFrame on HDFS storage. It is different than MapReduce, Spark Ecosystem which includes:]
+
+Spark Core API (Scala, Java, Python, R)
+Spark SQL (DataFrame)
+Spark MLlib (Machine Learning)
+Spark GraphX (Graph Computation)
+
+Below are some required steps which needs to be executed to get the required files and upload the same to HDFS.
+
+Get the required files:
+
+1. wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/friends.csv
+
+2. wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/Spark_Hadoop.py
+
+Run in terminal
+
+1. hdfs dfs -mkdir spark
+
+2. hdfs dfs -mkdir spark/job_output
+
+3. hdfs dfs -copyFromLocal Spark_Hadoop.py spark/Spark_Hadoop.py
+
+4. hdfs dfs -copyFromLocal friends.csv spark/friends.csv
+
+5. spark-submit Spark_Hadoop.py
+
+6. For easier look, open Ambari view files and the output will be in the folder spark/job_output
