@@ -16,6 +16,11 @@
 
 ### 5. Running Hive Queries through Command Line (Hive Shell) | Hadoop Tutorial
 
-![image](https://github.com/SyakeerRahman/Learn/assets/105381652/7c9b94f9-024c-4f92-9c65-c63b763ded1f)
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/0eee072d-584a-488c-a878-d6712b63211e)
+
+### 6. Running Spark Application on Hadoop Cluster | Spark with Hadoop Tutorial
+
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/33210b91-07d2-44fc-b764-a59672ede502)
+
 
 
