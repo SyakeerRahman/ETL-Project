@@ -1,0 +1,39 @@
+Running Apache Pig script on Hadoop Cluster to get the most popular movies from a data set. First we have uploaded the required data files to HDFS and then used the Pig View in  Ambari HDP Sandbox to run Pig script
+
+Required Commands:
+
+1. To get data to Local Server
+
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/movies.item
+
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/ratings.data
+
+2. Make directory and move the file from local to hdfs 
+
+hdfs dfs -mkdir pig
+
+hdfs dfs -copyFromLocal ratings.data pig/ratings.data
+
+hdfs dfs -copyFromLocal movies.item pig/movies.item
+
+3. In Ambari, paste the Hive Query to query the filtered data
+
+ratings = LOAD '/user/maria_dev/pig/ratings.data' AS (userID:int, movieID:int, rating:int, ratingTime:int);
+
+metadata = LOAD '/user/maria_dev/pig/movies.item' USING PigStorage('|')
+	AS (movieID:int, movieTitle:chararray, releaseDate:chararray, videoRealese:chararray, imdblink:chararray);
+   
+nameLookup = FOREACH metadata GENERATE movieID, movieTitle,
+	ToUnixTime(ToDate(releaseDate, 'dd-MMM-yyyy')) AS releaseTime;
+   
+ratingsByMovie = GROUP ratings BY movieID;
+
+avgRatings = FOREACH ratingsByMovie GENERATE group as movieID, AVG(ratings.rating) as avgRating;
+
+fiveStarMovies = FILTER avgRatings BY avgRating > 4.0;
+
+fiveStarsWithData = JOIN fiveStarMovies BY movieID, nameLookup BY movieID;
+
+oldestFiveStarMovies = ORDER fiveStarsWithData BY nameLookup::releaseTime;
+
+DUMP oldestFiveStarMovies;
