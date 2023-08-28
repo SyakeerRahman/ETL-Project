@@ -22,5 +22,11 @@
 
 ![image](https://github.com/SyakeerRahman/Learn/assets/105381652/33210b91-07d2-44fc-b764-a59672ede502)
 
+### 7. Running Apache Pig Script on Hadoop Cluster | Hadoop Tutorial
+
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/53959f90-d0f0-414f-be56-9074dd1fea46)
+
+
+
 
 
