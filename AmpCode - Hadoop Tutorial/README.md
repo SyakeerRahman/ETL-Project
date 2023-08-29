@@ -26,6 +26,11 @@
 
 ![image](https://github.com/SyakeerRahman/Learn/assets/105381652/53959f90-d0f0-414f-be56-9074dd1fea46)
 
+### 8. Running Sqoop Import/Export Jobs to Transfer Data Between MySQL and Hadoop (HDFS, Hive)
+
+<img width="645" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/af51ce4e-dd8e-4608-acdd-68e16c6726d8">
+
+
 
 
 
