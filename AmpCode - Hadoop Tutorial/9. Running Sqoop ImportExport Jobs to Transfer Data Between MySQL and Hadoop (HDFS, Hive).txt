@@ -1,0 +1,27 @@
+ Sqoop Import and Export Jobs to Transfer Data Between MySQL and Hadoop (HDFS, Hive) where we have given privileges to our database to root account and executed the Sqoop Import job to import the data from MySQL table to HDFS as well as Hive default database. Then exported the Hive Table to MySQL by using the Sqoop Export Command Line Utility.
+
+Required commands for this lecture:
+
+GRANT ALL PRIVILEGES ON movieratings.* to root@localhost identified by 'hadoop';
+
+import from MySQL to hdfs
+sqoop import --connect jdbc:mysql://localhost/movieratings --driver com.mysql.jdbc.Driver --table ratings -m 1 --username root --password hadoop
+
+import from MySQL to hive
+sqoop import --connect jdbc:mysql://localhost/movieratings --driver com.mysql.jdbc.Driver --table ratings -m 1 --username root --password hadoop --hive-import
+
+Before exporting, run the Create Table command to create table in MySQL:
+
+USE movieratings;
+
+CREATE TABLE exported_ratings(
+user_id INT,
+movie_id INT,
+rating INT,
+ts INT
+);
+
+export from hive to hdfs
+sqoop export --connect jdbc:mysql://localhost/movie_ratings -m 1 --driver com.mysql.jdbc.Driver --table exported_ratings --export-dir /apps/hive/warehouse/ratings --input-fields-terminated-by '\001' --username root --password hadoop
+
+
