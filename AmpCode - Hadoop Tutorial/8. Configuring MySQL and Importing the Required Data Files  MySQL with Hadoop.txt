@@ -1,0 +1,51 @@
+Configuring MySQL on Hadoop Cluster and Importing the Required Data Files for our Ratings table where we have ran the below commands to setup the MySQL on our HDP Sandbox to get the required privileges and permission so we can proceed with importing/exporting the data between Relational Databases (MySQL, MS SQL Server, PostgreSQL, MariaDB etc.) to the Hadoop Cluster(HDFS, Hive, HBase etc.)
+
+Required Commands:
+
+1. Get into the Hadoop cluster configuration
+
+su root and password: 'hadoop' for first-time
+
+systemctl stop mysqld
+
+systemctl set-environment MYSQLD_OPTS="--skip-grant-tables --skip-networking"
+
+systemctl start mysqld
+
+mysql -uroot
+
+2. In the MYSQL command, give access to root user 
+
+FLUSH PRIVILEGES;
+
+alter user 'root'@'localhost' IDENTIFIED BY 'hadoop';
+
+FLUSH PRIVILEGES;
+
+QUIT;
+
+
+3. Configuration
+
+systemctl unset-environment MYSQLD_OPTS
+
+systemctl restart mysqld
+
+mysql -u root -p
+
+4. IN MYSQL query
+
+CREATE DATABASE movieratings;
+
+USE movieratings;
+
+DROP TABLE IF EXISTS ratings;
+
+CREATE TABLE ratings(
+user_id INT,
+movie_id INT,
+rating INT,
+ts INT
+);
+
+LOAD DATA LOCAL INFILE '/home/maria_dev/ratings.data' INTO TABLE ratings;
