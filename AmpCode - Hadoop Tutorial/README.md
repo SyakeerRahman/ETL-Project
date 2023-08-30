@@ -36,6 +36,12 @@
     
 ![image](https://github.com/SyakeerRahman/Learn/assets/105381652/427b88a5-0a17-4e57-a25e-5e3058ccc59c)
 
+### 11. Installing Cassandra on Hadoop HDP Sandbox Cassandra with Hadoop Tutorial
+
+### 12. Writing Data to Cassandra using Spark  Integrating Spark with Cassandra  Big Data Hadoop Tutorial
+
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/cf1a1dec-c2d4-4ed3-9a21-6f5e3779aa13)
+
 
 
 
