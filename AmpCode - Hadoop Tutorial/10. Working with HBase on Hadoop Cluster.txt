@@ -1,0 +1,37 @@
+Working with HBase on our Hadoop Cluster installed on HDP Sandbox where we have created HBase table and loaded the data using Pig script by integrating the Pig with HBase on our Hadoop Cluster. 
+
+We have downloaded the required files from the below commands from remote Git repo and uploaded to HDFS, then we have started the HBase services on our HDP Sandbox and ran the Pig Script on the cluster.
+
+Required commands for this lecture:
+
+start Hbase in Ambari
+
+1. Bringing required file from Git to Local
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/movies.user
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/hbase_example.pig
+
+2. Make a pig directory in HDFS
+hadoop fs -mkdir /user/maria_dev/pig
+
+3. Move movies.user file from Local to hdfs
+hadoop fs -copyFromLocal movies.user /user/maria_dev/pig/movies.user
+
+4. In HBase cmd prompt
+- hbase shell (will take some time)
+- list (to check list of tables)
+- create 'users','userinfo' (to create table and table column)'
+- exit (to go back to local)
+
+5. check the pig script again to double confirm
+less hbase_example.pig
+
+6. Execute the script
+pig hbase_example.pig
+
+7. Check the data inside the hbase 'users' table (In HBase cmd prompt)
+- hbase shell
+- scan 'user' (to check the table)
+- disable 'user' (to get out from the table)
+- drop 'user' (to drop the table)
+
+Make sure to STOP the Hbase from Ambari
