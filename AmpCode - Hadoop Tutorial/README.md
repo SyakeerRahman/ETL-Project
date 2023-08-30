@@ -26,9 +26,16 @@
 
 ![image](https://github.com/SyakeerRahman/Learn/assets/105381652/53959f90-d0f0-414f-be56-9074dd1fea46)
 
-### 8. Running Sqoop Import/Export Jobs to Transfer Data Between MySQL and Hadoop (HDFS, Hive)
+### 8. 8. Configuring MySQL and Importing the Required Data Files  MySQL with Hadoop
+
+### 9. Running Sqoop Import/Export Jobs to Transfer Data Between MySQL and Hadoop (HDFS, Hive)
 
 <img width="645" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/af51ce4e-dd8e-4608-acdd-68e16c6726d8">
+
+### 10. Working with HBase on Hadoop Cluster
+    
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/427b88a5-0a17-4e57-a25e-5e3058ccc59c)
+
 
 
 
