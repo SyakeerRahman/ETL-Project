@@ -1,0 +1,26 @@
+Writing data to Cassandra using Apache Spark/PySpark where we have used Spark with Python to create RDD/DataFrame on top of our Big Data file and write to the Cassandra table present in KEYSPACE. 
+
+1. Get into root to bring the required file (movies.user & cassandraspark.py) into the local
+
+su root
+cd /etc/yum.repos.d
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/movies.user
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/cassandraspark.py
+
+2. Make directory inside HDFS and copy movies.user file from local to HDFS
+
+hadoop fs -mkdir /user/maria_dev/cassandra
+hadoop fs -copyFromLocal movies.user /user/maria_dev/cassandra/movies.user
+
+3.start cassandra and run spark job
+
+service cassandra start
+export SPARK_MAJOR_VERSION=2
+spark-submit --packages com.datastax.spark:spark-cassandra-connector_2.11:2.4.2 cassandraspark.py
+
+4. Verify the data get in cassandra sql cmd prompt
+cqlsh 
+use moviesdata;
+select * from users limit 10;
+esc
+ 

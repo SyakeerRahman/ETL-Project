@@ -1,0 +1,52 @@
+Installing Cassandra on Hadoop HDP Sandbox where we have installed the Python version 2.7 and setup the repository to install Cassandra service, then we have started the Cassandra service on our Hortonworks HDP Sandbox and created a KEYSPACE which is a Database for Casandra and created one table in it. 
+
+Below are the commands for installing Cassandra:
+
+If you have Python 2.6 then you have to install 2.7 alongside with previous version with below commands:
+
+su root
+yum install scl-utils
+yum install centos-release-scl-rh
+yum install python27
+scl enable python27 bash
+
+If you already have Python 2.7 installed, then start executing below commands (remember to login as a root user to get all the privileges)
+
+1. get inside this dir
+cd /etc/yum.repos.d
+
+2. to create datastax.repo file
+vi datastax.repo
+
+---------inside vi editor-------(press i to insert and edit)
+
+[datastax]
+name = DataStax Repo for Apache Cassandra
+baseurl = http://rpm.datastax.com/community
+enabled = 1
+gpgcheck = 0
+
+ESC
+
+:wq (to save and quit)----------------------------------
+
+3. cat datastax.repo to check the file data
+
+4. to install cassandra (will take a few minutes while it install required things)
+yum install dsc30
+
+5. to start cassandra service 
+service cassandra start
+
+6. to launch cassandra command line to run all cassandra query (same like SQL) 
+cqlsh (and it will show sqlsh>)
+
+7. create database moviesdata
+CREATE KEYSPACE moviesdata WITH replication = {'class': 'SimpleStrategy', 'replication_factor':'1'} AND durable_writes = true;
+
+8. create table and to show table created without data inside
+USE moviesdata;
+
+CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text, PRIMARY KEY (user_id));
+
+DESCRIBE TABLE users;
