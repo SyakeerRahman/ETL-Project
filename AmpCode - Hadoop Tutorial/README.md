@@ -42,6 +42,13 @@
 
 ![image](https://github.com/SyakeerRahman/Learn/assets/105381652/cf1a1dec-c2d4-4ed3-9a21-6f5e3779aa13)
 
+### 13. Installing MongoDB on HDP Sandbox  Integrating MongoDB with Hadoop and Apache Spark
+
+### 14. Working with MongoDB using Spark to ReadWrite the Data Big Data Hadoop Tutorial
+
+<img width="667" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/270cd82d-2d42-4c10-948d-9d42633091a1">
+
+### 15. MongoDB Working with Mongo Shell and Basic Commands  Big Data Hadoop Tutorial
 
 
 
