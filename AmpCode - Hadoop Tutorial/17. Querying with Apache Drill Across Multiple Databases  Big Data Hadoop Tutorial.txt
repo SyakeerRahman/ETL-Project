@@ -1,0 +1,19 @@
+Querying with Apache Drill Across Multiple Databases 
+
+where we have loaded the data in MongoDB and Hive and query it on Apache Drill to run JOIN operation. 
+
+1. get the required file movies.user & mongospark.py
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/movies.user
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/mongospark.py
+
+2. make directory and move movies.user 
+hadoop fs -mkdir /user/maria_dev/mongodb
+hadoop fs -copyFromLocal movies.user /user/maria_dev/mongodb/movies.user
+
+3. run pypark
+export SPARK_MAJOR_VERSION=2
+spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.3.2 mongospark.py
+
+4. open apache drill and start port
+cd apache-drill-1.12.0
+bin/drillbit.sh start -Ddrill.exec.port=8765

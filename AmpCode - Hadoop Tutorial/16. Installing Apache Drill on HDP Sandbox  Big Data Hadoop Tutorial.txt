@@ -1,0 +1,27 @@
+installing Apache Drill on HDP Sandbox 
+
+where we have downloaded the .tar file for Drill 1.12.0 version which is suitable for Apache Hive which is preinstalled on our HDP Sandbox 
+
+then we have started the Drill service on the specified port to get access for Drill through the web browser. We have also enabled the MongoDB and Hive services and configured the Apache Hive Metastore URL.
+
+
+1. get into root user
+su root
+
+2.get the required file 
+wget http://archive.apache.org/dist/drill/drill-1.12.0/apache-drill-1.12.0.tar.gz
+
+3. open/extract the tar file
+tar -xvf apache-drill-1.12.0.tar.gz
+
+4. get into the directory
+cd apache-drill-1.12.0
+
+5. 
+bin/drillbit.sh start -Ddrill.exec.port=8765
+
+if above doesn't work give this (bin/drillbit.sh start -Ddrill.exec.http.port=8765 )
+
+For setting up hive give in update like:
+
+"hive.metastore.urls": "thrift://localhost:9083"
