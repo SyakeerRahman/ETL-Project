@@ -50,6 +50,12 @@
 
 ### 15. MongoDB Working with Mongo Shell and Basic Commands  Big Data Hadoop Tutorial
 
+### 16. Installing Apache Drill on HDP Sandbox  Big Data Hadoop Tutorial
+
+### 17. Querying with Apache Drill Across Multiple Databases  Big Data Hadoop Tutorial
+
+<img width="636" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/c9639c1c-f03f-4c99-8f3a-6502b146b0e3">
+
 
 
 
