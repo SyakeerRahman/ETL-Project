@@ -56,6 +56,12 @@
 
 <img width="636" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/c9639c1c-f03f-4c99-8f3a-6502b146b0e3">
 
+### 18. Setting up Apache Phoenix and query HBase using it  Big Data Hadoop Tutorial
+
+### 19. Integrating Apache Phoenix with Pig to loadretrieve the data from HBase  Big Data Hadoop Tutorial
+
+<img width="644" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/1f53c5d1-c78b-4f1b-a1ad-b979b70e878f">
+
 
 
 
