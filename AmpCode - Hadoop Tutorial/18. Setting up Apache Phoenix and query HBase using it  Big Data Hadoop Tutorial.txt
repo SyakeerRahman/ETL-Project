@@ -1,0 +1,43 @@
+Setting up Apache Phoenix and query HBase using it 
+
+
+where we have started the HBase service and ran Phoenix query engine to submit SQL commands on top of HBase tables. 
+
+We have created HBase table using DDL command and used UPSERT commands to ingest the table and retrieved the data using SELECT.
+
+(If you are using Hadoop 2.5 or earlier then you m will not be available on these Hadoop versions and there is no easy of doing it.)
+
+1. login as root user and go inside phoenix
+su root
+cd /usr/hdp/current/phoenix-client/bin
+
+2. run sqlline.py file to kickoff phoenix service cmd prompt
+python sqlline.py
+
+3. in cmd line, get all the tables
+> !tables
+
+4. create table of employees
+> CREATE TABLE  IF NOT EXISTS employees(
+emp_id INTEGER NOT NULL,
+emp_name VARCHAR,
+job_title VARCHAR
+CONSTRAINT my_pk PRIMARY KEY (emp_id)
+);
+
+5. show all the table again to see whether the employee table is created or not
+!tables
+
+6. insert data manually
+UPSERT INTO employees VALUES(101,'Rajesh','Developer');
+UPSERT INTO employees VALUES(102,'John','Accountant');
+UPSERT INTO employees VALUES(103,'Sham','Admin');
+UPSERT INTO employees VALUES(104,'Trisha','CEO');
+UPSERT INTO employees VALUES(105,'Kevin','Librarian');
+UPSERT INTO employees VALUES(106,'Emma','Developer');
+UPSERT INTO employees VALUES(107,'Vinod','Clerk');
+UPSERT INTO employees VALUES(108,'Bella','Accountant');
+
+7. select * from employees;
+drop tables employees;
+!quit

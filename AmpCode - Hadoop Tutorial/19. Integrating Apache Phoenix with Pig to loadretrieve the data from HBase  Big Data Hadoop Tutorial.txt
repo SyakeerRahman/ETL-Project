@@ -1,0 +1,27 @@
+Integrating Apache Phoenix with Pig to load/retrieve the data from HBase table where we have wrote the Pig Script in Pig Latin language to load the data from our movies.user data file and retrieved it back from the HBase.
+
+1. login as root user and kickoff phoenix service
+su root
+cd /usr/hdp/current/phoenix-client/bin
+python sqlline.py
+
+2. create table as movies.user
+CREATE TABLE users(
+USERID INTEGER NOT NULL,
+AGE INTEGER,
+GENDER CHAR(1),
+OCCUPATION VARCHAR,
+ZIP VARCHAR
+CONSTRAINT pk PRIMARY KEY (USERID));
+
+3. get the required file
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/phoenix.pig
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/movies.user
+
+
+4. move movies.user file from local to hdfs run the pig job 
+move the movies.user file into hodfs and run pig phoenix.py
+
+5. python sqlline.py
+> !tables
+> select * from users limit 10
