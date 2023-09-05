@@ -62,6 +62,23 @@
 
 <img width="644" alt="image" src="https://github.com/SyakeerRahman/Learn/assets/105381652/1f53c5d1-c78b-4f1b-a1ad-b979b70e878f">
 
+### 20. Installing Presto and querying Hive using it  Big Data Hadoop Tutorial
+
+### 21. Querying Cassandra & Hive using Presto  Big Data Hadoop Tutorial
+
+### 22. Introducing Apache Tez  Tez vs MapReduce speed test using Hive  Big Data Hadoop
+
+### 23. Working with Spark using Zeppelin Notebook  Apache Zeppelin Tutorial  Big Data Hadoop Tutorial
+
+### 24. Setting up Apache Kafka and simulating a real-time data streaming  Big Data Hadoop Full Course
+
+### 25. Processing web logs using Apache Kafka  Big Data Hadoop Full Course
+
+### 26. Publishing logs data using Apache Flume  Real time data streaming on Hadoop
+
+###
+
+###
 
 
 
