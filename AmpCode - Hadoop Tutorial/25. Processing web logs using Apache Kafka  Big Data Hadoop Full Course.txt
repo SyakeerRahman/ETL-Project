@@ -1,0 +1,50 @@
+Processing web logs using Apache Kafka where we have built a Kafka data streaming application which takes the web logs as a input and write it on a topic as well as sink file in real time.
+
+Below are the commands required for this lecture.
+--------------------------------------------------------------------------------------------------------------------
+cd /usr/hdp/current/kafka-broker/conf
+
+cp connect-standalone.properties ~/
+cp connect-file-sink.properties ~/
+cp connect-file-source.properties ~/
+
+vi connect-standalone.properties
+
+bootstrap.servesrs=sandbox-hortonworks.com:6667
+
+vi connect-file-sink.properties
+
+file=/home/maria_dev/logout.txt
+topic = log-test
+
+vi connect-file-source.properties
+
+file=/home/maria_dev/access_log.txt
+topic = log-test
+
+wget https://raw.githubusercontent.com/ash...
+
+new console:
+
+cd /usr/hdp/current/kafka-broker/bin
+
+./kafka-console-consumer.sh --zookeeper localhost:2181 --topic log-test
+
+
+./kafka-console-consumer.sh --bootstrap-server sandbox-hortonworks.com:6667 --topic log-test --zookeeper localhost:2181
+
+new console:
+
+cd /usr/hdp/current/kafka-broker/bin
+
+./connect-standalone.sh ~/connect-standalone.properties ~/connect-file-source.properties ~/connect-file-sink.properties 
+
+Remember for HDP 2.5 version:
+
+in create and producer script, use the below zookeeper argument:
+
+./kafka-topics.sh --create --zookeeper sandbox.hdp.hortonworks.com:2181
+
+for consumer, run the below command:
+
+./kafka-console-consumer.sh --bootstrap-server sandbox.hdp.hortonworks.com:6667 --zookeeper localhost:2181 --topic test_topic --from-beginning

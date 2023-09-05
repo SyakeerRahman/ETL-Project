@@ -1,0 +1,34 @@
+Publishing logs data using Apache Flume 
+
+where we have streamed some raw data using Telnet as a source and published it to logger sink in real time using Apache Flume architecture. 
+
+You should be knowing some of the basic concepts of Apache Fume like what is sink, channel, source and how it works under the hood before heading for this tutorial.
+
+-----in 1st terminal --------------
+1. get the config file
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/flume_example.conf
+
+2. install telnet
+yum -y install telnet
+
+----in 2nd terminal----------
+
+3. get in flume-server
+cd /usr/hdp/current/flume-server
+
+4. run the flume
+bin/flume-ng agent --conf conf --conf-file /home/maria_dev/flume_example.conf --name a1 -Dflume.root.logger=INFO, console
+
+-------- in 1st terminal------------
+5. connect to localhost
+telnet localhost 44444
+
+6. write anything to put the data 
+> hi this is my first flume code
+
+
+--------in 3rd terminal------------
+7. cd /var/log/flume
+
+8. to see the output
+less flume.log

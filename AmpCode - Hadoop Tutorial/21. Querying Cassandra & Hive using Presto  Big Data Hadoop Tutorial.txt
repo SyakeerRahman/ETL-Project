@@ -1,0 +1,58 @@
+Querying Cassandra, Hive using Presto 
+
+where we have set the configuration properties file to connect presto to our underlying Cassandra cluster and submitted SQL queries on top of our existing Cassandra keyspace. 
+
+1. login as root user
+su root
+
+2. user python version 2.7 
+- python -V
+scl enable python27 bash
+
+3. start cassandra service
+service cassandra start
+
+4. to enable thrift service
+nodetool enablethrift
+
+5. enable cassandra sql shell
+cqlsh
+
+6. see the available table
+>describe keyspaces;
+> use moviesdata;
+> describe tables;
+> quit;
+
+7. cd presto-server-0.275/etc/catalog
+
+8.create a file for cassandra properties
+
+9. vi cassandra.properties
+press i (insert mode)
+--------------------------------------
+connector.name=cassandra
+cassandra.contact-points=127.0.0.1
+--------------------------------------
+press esc
+:wq
+
+10. launch the prest server
+cd ../.. to get into presto-server-0.275 and launch the cmd
+bin/launcher start
+
+11. kickoff presto cmd line
+bin/presto --server 127.0.0.1:8090 --catalog hive,cassandra
+
+12 
+> show tables froom cassandra.moviesdata;
+> describe cassandra.moviesdata.users;
+> select * from cassandra.moviesdata.users limit 5;
+
+13. join cassandra and hive table
+> select c.occupatiom, count(*)
+> from hive.default.ratings h
+> join cassandra.moviesdata.users c
+>on h.user_id - c.user_id
+> group by c.occupation;
+>

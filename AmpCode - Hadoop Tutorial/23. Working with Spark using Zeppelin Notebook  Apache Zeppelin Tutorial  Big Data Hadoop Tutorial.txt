@@ -1,0 +1,45 @@
+Working with Spark using Zeppelin Notebook
+
+where we open the notebook and run pyspark to load the data into our hdfs
+
+1. http://localhost:9995/
+
+2. create notebook spark-zeppelin
+
+3. get the required file
+%sh
+
+wget https://github.com/ashaypatil11/hadoop/blob/main/friends.csv -o /home/zeppelin/friends.csv
+echo "Completed!"
+
+
+4. move the file to the directory
+%sh
+
+hadoop fs -mkdir /tmp/zeppelin_spark
+hadoop fs -put /home/zeppelin/friends.csv /tmp/zeppelin_spark/friends.csv
+
+5. run pyspark to do transformation to the data and load the data
+
+%pyspark
+
+myschema = StructType([
+    StructField("userID", IntegerType(), True),
+    StructField("name", IntegerType(), True),
+    StructField("age", IntegerType(), True),
+    StructField("friends", IntegerType(), True)
+    ])
+
+
+people = spark.read.format("csv")\
+.schema(myschema)\
+.option("path", "hdfs:///tmp/zeppelin_spark/friends.csv").load()
+
+people.printSchema()
+
+output = people.select(people.userID, people.name, people.friends)\
+.where(people.friends > 30).orderBy(people.friends)
+
+output.createOrReplaceTempView("peoples")
+
+spark.sql("select * from peoples limit 20").show()

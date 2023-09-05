@@ -1,0 +1,13 @@
+Apache Tez which is data processing framework designed to handle Big Data on Hadoop by creating complex DAG instead of MapReduce approach. 
+
+We have also seen why Tez is way more efficient than MapReduce and compared the query execution times between Tez and MapReduce.
+
+----------------------------on hive shell---------------------------------------------------------------------
+set hive.execution.engine=tez;
+
+select movie_id, count(rating) 
+from default.ratings 
+group by movie_id 
+order by movie_id;
+
+set hive.execution.engine=mr;

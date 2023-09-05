@@ -1,0 +1,38 @@
+Setting up Apache Kafka and simulating a real-time data streaming on our HDP Sandbox 
+
+where we have set up Kafka cluster and created a topic and read/write some raw data from command line kafka consumer and kafka producer applications.
+
+
+Start Kafka service using Ambari
+
+1.su root and get into the directory
+cd /usr/hdp/current/kafka-broker/bin
+
+2. create topic and zookeper
+./kafka-topics.sh --create --zookeeper sandbox-hdp.hortonworks.com:2181 --replication-factor 1 --partitions 1 --topic test_topic
+
+3. show list 
+./kafka-topics.sh --list --zookeeper sandbox-hdp.hortonworks.com:2181
+
+4. kickoff producer to listen to any incoming data
+./kafka-console-producer.sh --broker-list sandbox-hdp.hortonworks.com:6667 --topic test_topic
+
+On next console---
+
+5. su root and go to the directory
+cd /usr/hdp/current/kafka-broker/bin
+
+6. kickoff consume to receive the incoming data
+./kafka-console-consumer.sh --zookeeper localhost:2181 --topic test_topic --from-beginning
+
+
+-----------------------------------------------------
+Remember for HDP 2.5 version:
+
+in create and producer script, use the below zookeeper argument:
+
+./kafka-topics.sh --create --zookeeper sandbox.hdp.hortonworks.com:2181
+
+for consumer, run the below command:
+
+./kafka-console-consumer.sh --bootstrap-server sandbox.hdp.hortonworks.com:6667 --zookeeper localhost:2181 --topic test_topic --from-beginning

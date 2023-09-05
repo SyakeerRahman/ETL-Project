@@ -1,0 +1,39 @@
+Installing and configuring Apache Presto on HDP Sandbox 
+
+where we have downloaded and extracted the Presto Tar file and also done the configuration to integrate Presto with Apache Hive to submit SQL queries on the underlying Hive database tables.
+
+
+1. login as root user and get the required file
+
+su root
+
+wget https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.275/presto-server-0.275.tar.gz
+
+2. extract the tar file into home directory
+tar -xvf presto-server-0.275.tar.gz
+
+3. go inside the directory
+cd presto-server-0.275
+
+4. upload configuration file
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/presto-hdp-config.tgz
+
+5. extract the file
+tar -xvf presto-hdp-config.tgz
+
+6. get the tar file
+wget https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.275/presto-cli-executable.jar
+
+7. move the fule
+mv presto-cli-0.275-executable.jar presto
+
+8. change the mode
+chmod +x presto
+
+9. start the service (login as root user
+bin/launcher start
+
+10. start hive shell
+ bin/presto --server 123.0.0.1:8090 --catalog hive
+
+11 bin/launcher stop
