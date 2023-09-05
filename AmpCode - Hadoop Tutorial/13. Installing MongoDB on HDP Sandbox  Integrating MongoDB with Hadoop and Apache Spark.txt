@@ -1,0 +1,44 @@
+MongoDB Installation on HDP Sandbox where we have imported
+
+the MongoDB - Ambari connector and installed, deployed MongoDB on the Hadoop cluster.
+
+
+1. login as root user
+su root
+
+2. go into the right path to install mongo db 
+cd /var/lib/ambari-server/resources/stacks/HDP/2.6/services
+
+3.
+git clone https://github.com/nikunjness/mongo-ambari.git
+
+4. restart ambari service to start
+sudo service ambari restart
+
+---------------------------------------------------------------------------------------
+5. Got to Ambari and set up MongoDB:
+
+If you face issues login as admin:
+
+su root
+ambari-admin-password-reset
+-----------------------------------------------------------------------------------------
+6.go into the directory and install mongodb
+
+- cd /var/lib/ambari-server/resources/stacks/HDP/2.6.5/services
+- pip install pymongo==3.4.0
+- mongo
+
+if mongo gives any error (first give "export LC_ALL=C" first) 
+
+------------------------------------------------------------------------------------------------------------------
+
+
+MongoDB Components:
+
+_id
+Collection
+Cursor 
+Database 
+Document 
+Field 

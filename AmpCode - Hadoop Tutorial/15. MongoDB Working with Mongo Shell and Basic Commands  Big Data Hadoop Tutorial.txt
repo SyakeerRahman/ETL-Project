@@ -1,0 +1,20 @@
+MongoDB: Working with Mongo Shell and Basic Commands | Big Data Hadoop Tutorial
+
+1. start mongo shell and use movielens
+
+2. find user id: 100 data
+db.users.find({user_id: 100})
+
+3. count the total number of collections
+db.users.count()
+
+4. what is going under the hood and find the pattern  (scan the whole columns) -  it will
+db.users.explain().find({user_id: 100})
+
+5. create index for much easier query
+db.users.createIndex({user_id: 1})
+
+6. group by occupation for avg age
+db.users.aggregate([ { $group: {_id: {occupation: "$occupation"}, avgAge: { $a                                                                             vg: "$age"}}} ])
+
+7. db.getCollectionInfos()

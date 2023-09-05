@@ -1,0 +1,25 @@
+Integrating MongoDB with Spark to Read/Write the data where we have used Apache Spark with Python (PySpark) to perform write and read operation on MongoDB on HDP Hadoop Sandbox. 
+
+1. get the required file
+
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/movies.user
+wget https://raw.githubusercontent.com/ashaypatil11/hadoop/main/mongospark.py
+
+2. make directory in hdfs and move movies.user to the directory
+
+hadoop fs -mkdir /user/maria_dev/mongodb
+hadoop fs -copyFromLocal movies.user /user/maria_dev/mongodb/movies.user
+
+
+3. export spark version 2 since spark use v1 as default and spark submit to start the job
+
+export SPARK_MAJOR_VERSION=2
+spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.3.2 mongospark.py
+
+4. go into mongo shell to start query to find user_id: 100
+mongo
+> show dbs
+> use movielens 
+> show collections
+> db.users.find({user_id: 100})
+> exit
