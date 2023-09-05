@@ -76,7 +76,10 @@
 
 ### 26. Publishing logs data using Apache Flume  Real time data streaming on Hadoop
 
-###
+### 27. Streaming data to HDFS using Apache Flume  Big Data Hadoop Tutorial
+
+![image](https://github.com/SyakeerRahman/Learn/assets/105381652/bc24367c-879d-447c-a62a-2f017e6a3dd9)
+
 
 ###
 
